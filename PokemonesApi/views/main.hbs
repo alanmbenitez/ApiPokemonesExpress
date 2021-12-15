@@ -1,0 +1,50 @@
+<div class="container">
+    <div class="row justify-content-center">
+
+        <div class="col-md-offset-1 col-md-10">
+            <div class="panel">
+                <div class="panel-heading">
+                    <div class="row">
+                        <div class="col-sm-5 col-xs-12">
+                            <h4 class="title">Listado de Pokemones</h4>
+                        </div>
+                        <div class="col-sm-7 col-xs-12 text-right">
+                            <a href="/" class="btn add-new"><i class="fa fa-plus-circle"></i>
+                                Nuevo Pokemon
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-body table-responsive" style="
+    background-color: aliceblue;">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>Nombre</th>
+                                <th>Caracterisicas</th>
+                                <th>Imagen</th>
+                            </tr>
+                        </thead>
+                        {{#if hayProductos }}
+                        <tbody>
+                            {{#each productos}}
+                            <tr>
+                                <td>{{this.title}}</td>
+                                <td>{{this.desc}}</td>
+                                <td>
+                                    <div class="user_icon">
+                                        <img src={{this.thumbnail}} alt="">
+                                    </div>
+                                </td>
+                            </tr>
+                            {{/each}}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        {{else}}
+        <h2 class="alert alert-warning">No se encontraron Pokemones</h2>
+        {{/if}}
+    </div>
+</div>
